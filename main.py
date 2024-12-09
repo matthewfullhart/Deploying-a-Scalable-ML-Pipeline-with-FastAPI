@@ -39,7 +39,7 @@ app = FastAPI()
 @app.get("/")
 async def get_root():
     """ Say hello!"""
-    return{"greeting": "Welcome to the API for the Census ML Model!\n-------------------------------------------\n"
+    return{"greeting": "Welcome to the API for the Census ML Model!"}
 
 
 # Creates a POST on a different path that does model inference
@@ -65,7 +65,7 @@ async def post_inference(data: Data):
         data,
         categorical_features = cat_features,
         encoder = encoder,
-        training = false
+        training = False
     )
     _inference = inference(model, data_processed)
     
